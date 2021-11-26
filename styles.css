@@ -1,4 +1,3 @@
-
 body{
     font-size: 18px;
     color: #2D3748;
@@ -7,9 +6,11 @@ body{
     margin:0 auto;
     max-width: 960px;
     width: 960px;
-
    
+
 }
+ 
+      
 
 #bug{
     float:left;
@@ -30,13 +31,19 @@ header{
     color: white;
     padding: 15px; 
     line-height: 2px;
-    
+    width: 100%;
 }
 
-.parent{
+.issue{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
+    /* grid-column-gap: 10px; */
+    grid-row-gap: 10px;
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     /* grid-column-gap: 10px; */
     grid-row-gap: 10px;
 }
@@ -44,10 +51,29 @@ header{
 .article{
    justify-content: center;
    padding-left:25px; 
-
-    
 }
 
+input{
+    width: 500px;
+    margin-bottom: -10px;
+    padding-bottom: 10px;
+}
+form{
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.submit{
+    width: 80px;
+    background-color: blue;
+    color: white;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
 
 #right{
     float:left; 
@@ -60,10 +86,13 @@ header{
     display: inline;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
+    padding: 21px;
     /* position: relative;
     top: -460px */
   }
-.h3{
+
+.display{
 
     padding: 30px;
     padding-right:25px;
@@ -73,7 +102,7 @@ header{
 
 .nav{
 
-    width: 220px;
+    width: 165px;
     height: 830px;
     z-index: 1;
     top: 25; 
@@ -81,11 +110,21 @@ header{
     float: left;
     position: relative;
     overflow-x: hidden;
-    display: grid;
+    
     background-color:rgb(209, 209, 209);
-    grid-template-columns: 1;
+   
+    
 
-
+}
+.tab-content{
+    padding: 10px;
+}
+.section{
+    display: grid;
+    grid-template-areas:
+    'tabs tab-content tab-content tab-content asideBar'
+    'tabs tab-content tab-content tab-content asideBar'
+    'tabs tab-content tab-content tab-content asideBar'
 
 }
 .bar{
@@ -119,7 +158,9 @@ header{
      padding: 15px;
 
 }
-
+.tabs a{
+    text-decoration: none;
+}
 .green{
     background-color: rgb(60, 218, 21);
     border-radius: 5px;
@@ -140,3 +181,32 @@ header{
     color: rgb(26, 22, 22);
 
 }
+
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color:lightblue
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+   
+    padding: 20px;
+  }
+
+/*Shadowboxes for Create Issue form*/
+input, textarea, select{
+    box-shadow: 1px 1px 1px 1px #888888;
+    
+  }
