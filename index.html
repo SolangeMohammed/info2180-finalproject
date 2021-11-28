@@ -34,7 +34,65 @@
         </div>  
             <div class="tab-content">
                 <div id="home" class="tab-pane fade in active">
-                    <div class="main">
+                    <form action="">
+                        <div class="issues">
+                          <h1 class="h1">Issues</h1>
+                          <button class="new-issue" id="new_issue">Create New User</button>
+                        </div>
+                        <div class="filter">
+                          <p class="par">Filter by: </p>
+                          <a class="all" href="" id="all">All</a>
+                          <a class="open" href="" id="open">Open</a>
+                          <a class="tickets" href="" id="my-tickets">My Tickets</a>
+                        </div>
+                        <table class="table">
+                          <tr>
+                              <th>Title</th>
+                              <th>Type</th>
+                              <th>Status</th>
+                              <th>Assigned To</td>
+                              <th>Created</th>
+                          </tr>
+                          <tr>
+                              <td class="title"><em>#100</em>  <a href="url"> Vulnerability in Add User Form</a></td>
+                              <td class="type">Bug</td>
+                              <td><input type="button" id="status1" value="Open"></td>
+                              <td class="asto">Tom Brady</td>
+                              <td class="date">2019-11-01</td>
+                          </tr>
+                          <tr>
+                              <td class="title"><em>#23</em> <a href="url">Location Service isn't working</a></td>
+                              <td class="type">Bug</td>
+                              <td><input type="button" id="status1" value="Open"></td>
+                              <td class="asto">Jan Brady</td>
+                              <td class="date">2019-10-15</td>
+                          </tr>
+                          <tr>
+                              <td class="title"><em>#16</em> <a href="url"> Setup Logger</a></td>
+                              <td class="type">Proposal </td>
+                              <td><input type="button" id="status2" value="Closed"></td>
+                              <td class="asto">Marsha Brady</td>
+                              <td class="date">2019-08-10</td>
+                          </tr>
+                          <tr>
+                              <td class="title"><em>#50</em> <a href="url">Create API Documentation</a></td>
+                              <td class="type">Proposal</td>
+                              <td class="status"><input type="button" id="status3" value="In Progress"></td>
+                              <td class="asto">Mike Brady</td>
+                              <td class="date">2019-10-29</td>
+                          </tr>
+                          <tr>
+                              <td class="title"><em>#24</em> <a href="url">Allow results to be sorted</a></td>
+                              <td class="type">Proposal</td>
+                              <td><input type="button" id="status3" value="In Progress"></td>
+                              <td class="asto">Marcia Brady</td>
+                              <td class="date">2019-10-20</td>
+                          </tr>
+                        </table>
+                    </form>
+                </div> 
+
+                    <!-- <div class="main">
                         <div class="display">
                             <h1>XSS VULERABILITY IN ADD USER FORM</h1>
                             <h3>Issue #100</h3>  
@@ -78,8 +136,8 @@
                     
                         </div>
                     
-                    </div>
-                </div>
+                    </div> -->
+               
                     
                 <div id="add" class="tab-pane fade">
                   <h3>New User</h3>

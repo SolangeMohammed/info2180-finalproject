@@ -182,7 +182,7 @@ form{
 
 }
 
-
+/* Start of abe's code */
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
     background-color: blue;
@@ -210,3 +210,172 @@ input, textarea, select{
     box-shadow: 1px 1px 1px 1px #888888;
     
   }
+
+
+  /* home screen: dancye's part */
+  .issues{
+    display: flex;
+    justify-content: space-between;
+  }
+.filter{
+    display:flex;
+    padding-left: 10px;
+  }
+/* body{
+    width: fit-content;
+} */
+#h1{
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 10px;
+  }
+#par{
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-right: 35px;
+    padding-top: 8px;
+  }
+  table{
+    border-collapse: collapse; 
+    font-family:sans-serif;
+    width: 100%;
+  }
+  em{
+    font-weight: bold;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+  tr:first-child {
+    background-color: #e2e2e2;
+    border-radius: 2.5px;
+    }
+  #status2{
+    font: 1em sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color:white;
+    background-color: orangered;
+    opacity: 0.9;
+    padding: 7px;
+    border: none;
+    border-radius: 5.5px;
+  }
+  #status1{
+    text-transform: uppercase;
+    text-align: center;
+    font: 1em sans-serif;
+    color:white;
+    background-color: green;
+    opacity: 0.7;
+    padding: 7px;
+    border: none;
+    border-radius: 5.5px;
+  }
+  #status3{
+    text-transform: uppercase;
+    text-align: center;
+    color:black;
+    font: 1em sans-serif;
+    background-color:gold;
+    padding: 9px;
+    border: none;
+    border-radius: 5.5px;
+  }
+  input[type=button]{
+    margin: auto;
+  }
+  a:link{
+    text-decoration: none;
+    color:rgb(27, 126, 226);
+  }
+  /* #all, #open, #my-tickets{
+    background-color: none;
+    color: black;
+    font: 1em sans-serif;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding:10px;
+    padding-left: 50px;
+    border-radius: 5px;
+    margin-top: 8px;
+  } */
+  .new-issue{
+    background-color: green;
+    opacity: 0.7;
+    font: 1em sans-serif;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    height: 40px;
+    width: 165px;
+    margin-right: 45px;
+  }
+  .filter{
+    padding-bottom: 25px;
+    padding-top: 10px;
+  }
+  a.all, a.open, a.tickets{
+    background-color: none;
+    color: black;
+    font: 1em sans-serif;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding:7px;
+    padding-left: 50px;
+    border-radius: 5px;
+    margin-top: 8px;
+  }
+  a.all:link, a.all:visited {
+    background-color:none;
+    color:black;
+    padding: 15px 25px;
+    margin-right: 25px;
+    height: 10px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a.open:link, a.open:visited {
+    background-color: none;
+    color: black;
+    padding: 15px 25px;
+    margin-right: 20px;
+    height: 10px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a.tickets:link, a.tickets:visited {
+    background-color:none;
+    color: black;
+    padding: 15px 25px;
+    height: 10px;
+    width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a.all:hover, a.all:active {
+    background-color: rgb(54, 54, 233);
+    opacity: 0.8;
+    color: white;
+    }
+  a.open:hover, a.open:active {
+    background-color: rgb(54, 54, 233);
+    opacity: 0.8;
+    color: white;
+    }
+  a.tickets:hover, a.tickets:active {
+    background-color: rgb(54, 54, 233);
+    opacity: 0.8;
+    color: white;
+    }
