@@ -1,5 +1,4 @@
-window.onload = function()
-{
+window.onload = function(){
     let fname = document.getElementById("fname")
     let lname = document.getElementById("lname")
     let email = document.getElementById("email")
@@ -11,22 +10,22 @@ window.onload = function()
         e.preventDefault();
          //ensuring no field is left empty
         console.log("js working")
-        if(fname.value = " "){
+        if(fname.value == ""){
             fname.style.borderColor="red";
             alert("Please enter Fisrt name");
             return false;
         }
-        else if(lname.value = " "){
+        else if(lname.value == ""){
             lname.style.borderColor="red";
             alert("Please enter Last name");
             return false;
         }
-        else if(email.value = " "){
+        else if(email.value == ""){
             email.style.borderColor="red";
             alert("Please enter your email");
             return false;
         }
-        else if(password.value = " "){
+        else if(password.value == ""){
             password.style.borderColor="red";
             alert("Please enter password");
             return false;
@@ -35,7 +34,7 @@ window.onload = function()
         //ensuring password meets requirements
         if(!password.value.match(pwvalidate)){
             password.style.borderColor="red";
-            alert("Passowrd mus have one");
+            alert("Password must contain a Capital Letter");
             return false;
         }
     });
