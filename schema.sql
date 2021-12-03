@@ -22,11 +22,13 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+DROP DATABASE IF EXISTS bugme; 
+CREATE DATABASE bugme; 
+USE bugme;
 --
 -- Table structure for table `issues`
 --
-
+DROP TABLE IF EXISTS 'cities';
 CREATE TABLE `issues` (
   `id` int(11) NOT NULL,
   `title` varchar(64) NOT NULL,
