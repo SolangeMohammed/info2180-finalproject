@@ -34,7 +34,7 @@ window.onload = function(){
         //ensuring password meets requirements
         if(!password.value.match(pwvalidate)){
             password.style.borderColor="red";
-            alert("Password must contain a Capital Letter");
+            alert("Password must contain a Capital Letter and a number");
             return false;
         }
     });
