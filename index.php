@@ -141,62 +141,65 @@ require_once "./phpfunctions.php";?>
                 
                         
                     <div id="add" class="tab-pane fade">
-                    <h3>New User</h3>
-                    <form>
-                        <script src="script.js" type="text/javascript"></script>
-                        <label for="fname">Firstname</label>
-                        <input type="text" id="fname" name="fname" placeholder=" ">
-                        <label for="lname">Lastname</label>
-                        <input type="text" id="lname" name="lname" placeholder=" ">
-                        <label for="password">Password</label>
-                        <input type="text" id="password" name="password" placeholder=" ">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email" placeholder=" ">
-                        <input type="submit"  id = "submit"class = "submit" value="Submit">
-                        <div id="results"></div>
-                    </form>
-                    
-                    </div>
-                    <div id="new" class="tab-pane fade">
-                        <h3>Create Issue</h3>
-                        <form method="post" name="form" id="form" action="">
-                            <script src="createissues.js" type="text/javascript"></script>
-                            <label for="title">Title</label>
-                            <input type="text" id="title" name="array[]" placeholder=" ">
-                            
-                            <label for="description">Description</label>
-                            <textarea id="description" name="array[]" placeholder=" " style="height:200px"></textarea>
-                                        
-                            <label for="assigned">Assigned To</label>
-                            <select id="assigned" name="assigned">
-
-                                <option value="name1">Admin</option>
-                                <option value="name2">S</option>
-                                    
-                            </select><br><br>
-                            
-                            <label for="type">Type</label>
-                            <select id="type" name="type">
-                            <option value="bug">Bug</option>
-                            <option value="proposal"> Proposal </option>
-                            <option value="task"> Task </option>
-                            </select><br><br>
-                            
-                            <label for="priority">Priority</label>
-                            <select id="priority" name="priority">
-                                <option value="minor">Minor</option>
-                                <option value="major">Major</option>
-                                <option value="critical">Critical</option>
-                            </select><br>
-                                        
-                            <button type="submit" id="issue_submit" value="Submit">Submit</button>
-                                
+                        <h3>New User</h3>
+                        <form>
+                            <script src="script.js" type="text/javascript"></script>
+                            <label for="fname">Firstname</label>
+                            <input type="text" id="fname" name="fname" placeholder=" ">
+                            <label for="lname">Lastname</label>
+                            <input type="text" id="lname" name="lname" placeholder=" ">
+                            <label for="password">Password</label>
+                            <input type="text" id="password" name="password" placeholder=" ">
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder=" ">
+                            <input type="submit"  id = "submit"class = "submit" value="Submit">
+                            <div id="results">
+                                <p>Message</p>
+                            </div>
                         </form>
-                        <div>
-                            <h2>Result</h2>
-                            <div id="result"></div>
-                        </div>  
-                    </div>
+                    
+                     </div>
+                        
+                    <div id="new" class="tab-pane fade">
+                            <h3>Create Issue</h3>
+                            <form method="post" name="form" id="form" action="">
+                                <script src="createissues.js" type="text/javascript"></script>
+                                <label for="title">Title</label>
+                                <input type="text" id="title" name="array[]" placeholder=" ">
+                                
+                                <label for="description">Description</label>
+                                <textarea id="description" name="array[]" placeholder=" " style="height:200px"></textarea>
+                                            
+                                <label for="assigned">Assigned To</label>
+                                <select id="assigned" name="assigned">
+
+                                    <option value="name1">Admin</option>
+                                    <option value="name2">S</option>
+                                        
+                                </select><br><br>
+                                
+                                <label for="type">Type</label>
+                                <select id="type" name="type">
+                                <option value="bug">Bug</option>
+                                <option value="proposal"> Proposal </option>
+                                <option value="task"> Task </option>
+                                </select><br><br>
+                                
+                                <label for="priority">Priority</label>
+                                <select id="priority" name="priority">
+                                    <option value="minor">Minor</option>
+                                    <option value="major">Major</option>
+                                    <option value="critical">Critical</option>
+                                </select><br>
+                                            
+                                <button type="submit" id="issue_submit" value="Submit">Submit</button>
+                                    
+                            </form>
+                            <div>
+                                <h2>Result</h2>
+                                <div id="result"></div>
+                            </div>  
+                        </div>
                         
                     
                     
