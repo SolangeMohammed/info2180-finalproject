@@ -1,24 +1,57 @@
+
 window.onload = function()
 {
     var submit = document.querySelector('#issue_submit');
     var httpRequest; 
+    var type = document.querySelector('[id="type"]');
+    var priority = document.querySelector('[id="priority"]');
+
+    type.addEventListener("change", function (e){
+        // log(`e.target`, e.target);
+        var select = e.target;
+        var value = select.value;
+        const desc = select.selectedOptions[0].text;
+        console.log('option des', desc);
+
+    });
+
+    function change(){
+
+        priority.addEventListener("change", function (e){
+            // log(`e.target`, e.target);
+            var sel= e.target;
+            var val = sel.value;
+            const pri = sel.selectedOptions[0].text;
+            console.log('option pri', pri);
     
+        });
+
+    }
+    
+
+
+
 
     submit.addEventListener('click', function(element)
     {
         element.preventDefault();
         console.log("button clicked");
-        checkEmptyfields(); 
+        checkEmptyfields();  
         httpRequest = new XMLHttpRequest(); 
         var title = document.getElementById('title');
         var t = title.value;
         var description = document.getElementById('description');
         var d = description.value; 
+        var assigned = document.getElementById('issue').value; 
+        // var random = change.pri; 
+        var ran = priority.pri;
+        // var type = document.getElementById('type'); 
+        // var priority = document.getElementById('priority').value;
         var url = "process.php";
         httpRequest.onreadystatechange = processName;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send('title=' + encodeURIComponent(t) + "&description=" + encodeURIComponent(d));
+        httpRequest.send('title=' + encodeURIComponent(t) + '&description=' + encodeURIComponent(d) + '&type=' + encodeURIComponent(random) + "&priority=" + encodeURIComponent(ran));
     });
     
     function processName() {
@@ -32,7 +65,10 @@ window.onload = function()
           }
         }
     }
+   
     
+
+
     function checkEmptyfields()
     {
 
@@ -53,32 +89,14 @@ window.onload = function()
         {
             console.log(description.value);
             console.log(title.value);
+            console.log(type);
+            console.log(priority); 
             console.log("good too go ");
                 
          }
         
     }
-}
-
-
-// function cleanInput(){
-//     var cTitle = title.value; 
-//     var cDescription = description.value; 
-//     cTitle = cTitle.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, "");
-//     cleaninput = cTitle.trim();
-//     cDescription = cDescription.replace(/[^a-z0-9áéíóúñü \.,_-]/gim, "");
-//     cleaninput2 = cDescription.trim();
-
-// }
-
-// window.addEventListener("DOMContentLoaded",function()
-// {
-//     submitbtn();
-//     checkEmptyfields();
-//     // cleanInput(); 
-    
-// })
+}    
 
 
 
-   

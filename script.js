@@ -4,13 +4,14 @@ window.onload = function(){
     let email = document.getElementById("email")
     let submit = document.getElementById("submit")
     let password =document.getElementById("password")
-    var pwvalidate = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-
+    var pwvalidate = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
+    let formelements = document.getElementById("new-user").elements
+    const postRequest= new XMLHttpRequest();
     submit.addEventListener('click', function(e){
         e.preventDefault();
          //ensuring no field is left empty
         console.log("js working")
-        if(fname.value == ""){
+        if(fname.value == " "){
             fname.style.borderColor="red";
             alert("Please enter Fisrt name");
             return false;
@@ -32,10 +33,27 @@ window.onload = function(){
         }
 
         //ensuring password meets requirements
-        if(!password.value.match(pwvalidate)){
+        /*if(!password.value.match(pwvalidate)){
             password.style.borderColor="red";
-            alert("Password must contain a Capital Letter and a number");
+            alert("Passowrd must have one");
             return false;
         }
+        */
+       var insertrequest = new XMLHttpRequest();
+       var url = "http://localhost/info2180-finalproject/addnewuser.php?fisrtname="  +fname.value+ "&lastname=" +lname.value+ "&email=" +email.value+ "&password=" +password.value;
+       insertrequest.onreadystatechange = function(){
+           if(insertrequest.readyState == XMLHttpRequest.DONE){
+            if(insertrequest.status == 200){
+                var result = insertrequest.responseText
+                console.log(result)
+            }
+            else{
+                alert("Cant add user")
+            }
+               
+           }
+       }
+       insertrequest.open("GET",url,true);
+       insertrequest.send();
     });
 }

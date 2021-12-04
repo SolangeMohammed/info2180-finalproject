@@ -6,23 +6,33 @@ $password = 'password123';
 $dbname = 'bugme';
 
 $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $conn->query("SELECT * FROM issues");
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // $title = $_POST['title'];
-  // $description = $_POST['description'];
-  $sql = "INSERT INTO issues (`title`, `description`, `created`) VALUES (:title, :dr)";
-  $stmt1 = $conn->prepare($sql);
-  $stmt1 ->bindParam(':title', $_POST['title']);
-  $stmt1 ->bindParam(':dr', $_POST['description']);
+  date_default_timezone_set('Jamaica');
   
+  $title = $_POST['title']; 
+  $dr = $_POST['description'];
+  $ty = $_POST['type'];
+  $priority = $_POST['priority'];
+  $stat = "Open"; 
+  $created =  date("Y-m-d H:i:s");   
+  $updated = date("Y-m-d H:i:s");
+  $sql = "INSERT INTO issues (`title`, `description`, `type`,`priority`,`status`, `created`, `updated`) 
+  VALUES ('$title', '$dr', '$ty', '$priority', '$stat', '$created', '$updated')";
+  $conn->exec($sql); 
 
-  $stmt1-> execute(); 
   echo "New records created successfully";
   echo "The title: <strong>" . $_POST['title'] . "</strong> Description: <strong>" . $_POST['description'] . "</strong>.";
+  echo "type:" .$_POST['type'] . "priority: <strong>" .$_POST['priority'] . "</strong>."  ; 
+  echo $status; 
+  echo $created; 
+  
+  
   }else{
 
     echo "failed"; 

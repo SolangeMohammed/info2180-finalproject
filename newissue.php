@@ -21,6 +21,8 @@ empty($_POST['title']) || empty($_POST['description'])) {
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="createissues.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
     </head>
     <body>
         <header class="header">
@@ -49,20 +51,20 @@ empty($_POST['title']) || empty($_POST['description'])) {
                 </select><br><br>
             
                 <label for="type">Type</label>
-                <select id="issue" name="type">
-                   <option value="type">Bug</option>
-                   <option> Proposal </option>
-                   <option> Task </option>
+                <select id="type" name="type">
+                   <option value="bug">Bug</option>
+                   <option value="proposal"> Proposal </option>
+                   <option value="task"> Task </option>
                 </select><br><br>
             
                 <label for="priority">Priority</label>
-                <select id="issue" name="priority">
-                    <option value="priority">Minor</option>
-                    <option value="priority">Major</option>
-                    <option value="priority">Critical</option>
+                <select id="priority" name="priority">
+                    <option value="minor">Minor</option>
+                    <option value="major">Major</option>
+                    <option value="critical">Critical</option>
                 </select><br>
                         
-                <input type="submit" id="issue_submit" value="Submit">
+                <button type="submit" id="issue_submit" value="Submit">Submit</button>
                     
             </form>
         </div>
