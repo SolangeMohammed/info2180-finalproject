@@ -3,34 +3,26 @@ window.onload = function()
 {
     var submit = document.querySelector('#issue_submit');
     var httpRequest; 
-    var type = document.querySelector('[id="type"]');
     var priority = document.querySelector('[id="priority"]');
-
-    type.addEventListener("change", function (e){
-        // log(`e.target`, e.target);
-        var select = e.target;
-        var value = select.value;
-        const desc = select.selectedOptions[0].text;
-        console.log('option des', desc);
-
-    });
-
-    function change(){
-
-        priority.addEventListener("change", function (e){
-            // log(`e.target`, e.target);
-            var sel= e.target;
-            var val = sel.value;
-            const pri = sel.selectedOptions[0].text;
-            console.log('option pri', pri);
+    let desc; 
+    var type = document.querySelector('[id="type"]'); 
+        type.addEventListener("change", function (e){
+            var select = e.target;
+            var value = select.value;
+            desc = select.selectedOptions[0].text;
+            console.log('option des', desc);
     
         });
+    let pri
+    priority.addEventListener("change", function (e){
+        // log(`e.target`, e.target);
+        var sel= e.target;
+        var val = sel.value;
+        pri = sel.selectedOptions[0].text;
+        
+        console.log('option pri', pri);
 
-    }
-    
-
-
-
+    });
 
     submit.addEventListener('click', function(element)
     {
@@ -42,16 +34,14 @@ window.onload = function()
         var t = title.value;
         var description = document.getElementById('description');
         var d = description.value; 
-        var assigned = document.getElementById('issue').value; 
-        // var random = change.pri; 
-        var ran = priority.pri;
-        // var type = document.getElementById('type'); 
-        // var priority = document.getElementById('priority').value;
+        var assigned = document.getElementById('issue').value;
+        
+        console.log('pop', desc); 
         var url = "process.php";
         httpRequest.onreadystatechange = processName;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send('title=' + encodeURIComponent(t) + '&description=' + encodeURIComponent(d) + '&type=' + encodeURIComponent(random) + "&priority=" + encodeURIComponent(ran));
+        httpRequest.send('title=' + encodeURIComponent(t) + '&description=' + encodeURIComponent(d) + '&type=' + encodeURIComponent(desc) + "&priority=" + encodeURIComponent(pri));
     });
     
     function processName() {
