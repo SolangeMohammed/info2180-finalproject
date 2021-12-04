@@ -57,7 +57,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                     <th>Title</th>
                                     <th>Type</th>
                                     <th>Status</th>
-                                    <th>Assigned To</td>
+                                    <th>Assigned To</th>
                                     <th>Created</th>
                                 </tr>
                             </thead>

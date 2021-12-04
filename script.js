@@ -6,8 +6,8 @@ window.onload = function(){
     let password =document.getElementById("password")
     let results =document.getElementById("results")
     var pwvalidate = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
-    let formelements = document.getElementById("new-user").elements
-    const postRequest= new XMLHttpRequest();
+    //let formelements = document.getElementById("new-user").elements
+    //const postRequest= new XMLHttpRequest();
     submit.addEventListener('click', function(e){
         e.preventDefault();
          //ensuring no field is left empty
@@ -41,7 +41,7 @@ window.onload = function(){
         }
         */
        var insertrequest = new XMLHttpRequest();
-       var url = "addnewuser.php";
+       var url = "http://localhost/info2180-finalproject/adduser.php";
        insertrequest.onreadystatechange = function(){
            if(insertrequest.readyState == XMLHttpRequest.DONE){
             if(insertrequest.status == 200){

@@ -37,7 +37,7 @@
                 <select id="assigned" name="assigned">
 
                     <option value="name1">Admin</option>
-                    <option value="name2">Sol</option>
+                    <option value="name2">S</option>
                     
                 </select><br><br>
             

@@ -14,7 +14,7 @@ window.onload = function()
             console.log('option des', desc);
     
         });
-    let pri
+    let pri;
     priority.addEventListener("change", function (e){
         // log(`e.target`, e.target);
         var sel= e.target;
@@ -25,7 +25,7 @@ window.onload = function()
 
     });
 
-    let nameText
+    let nameText;
     assigned.addEventListener("change", function (e){
         // log(`e.target`, e.target);
         var nam= e.target;
@@ -47,8 +47,6 @@ window.onload = function()
         var t = title.value;
         var description = document.getElementById('description');
         var d = description.value; 
-        var assigned = document.getElementById('issue').value;
-        
         console.log('pop', desc); 
         var url = "process.php";
         httpRequest.onreadystatechange = processName;
