@@ -1,381 +1,348 @@
 body{
-    font-size: 18px;
-    color: #2D3748;
-    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, "Noto Sans", sans-serif;
-    box-sizing: border-box;
-    margin:0 auto;
-    max-width: 960px;
-    width: 960px;
-   
+  font-size: 18px;
+  color: #2D3748;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, "Noto Sans", sans-serif;
+  box-sizing: border-box;
+  margin:0 auto;
+  max-width: 960px;
+  width: 960px;
+ 
 
 }
- 
-      
+
+    
 
 #bug{
-    float:left;
-    line-height: 2px;
-    padding:10px;
-    
+  float:left;
+  line-height: 2px;
+  padding:10px;
+  
 }
 
 .center{
-    line-height: 1px;
-    padding:10px;
-    margin: 0;
+  line-height: 1px;
+  padding:10px;
+  margin: 0;
 }
 
 
 header{
-    background-color: black;
-    color: white;
-    padding: 15px; 
-    line-height: 2px;
-    width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px; 
+  line-height: 2px;
+  width: 100%;
 }
 
 .issue{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* grid-column-gap: 10px; */
-    grid-row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-column-gap: 10px; */
+  grid-row-gap: 10px;
 }
 
 main{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* grid-column-gap: 10px; */
-    grid-row-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-column-gap: 10px; */
+  grid-row-gap: 10px;
 }
 
 .article{
-   justify-content: center;
-   padding-left:25px; 
+ justify-content: center;
+ padding-left:25px; 
 }
 
 input{
-    width: 500px;
-    margin-bottom: -10px;
-    padding-bottom: 10px;
+  width: 500px;
+  margin-bottom: -10px;
+  padding-bottom: 10px;
 }
 form{
-    display:flex;
-    justify-content: space-around;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 10px;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .submit{
-    width: 80px;
-    background-color: blue;
-    color: white;
-    padding: 8px;
-    margin-top: 10px;
-    border-radius: 5px;
+  width: 80px;
+  background-color: blue;
+  color: white;
+  padding: 8px;
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 #right{
-    float:left; 
+  float:left; 
 }
 .asideBar{
-    width: 30%;
-    float: right;
-    display: flex;
-    text-align: right;
-    display: inline;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    padding: 21px;
-    /* position: relative;
-    top: -460px */
-  }
+  width: 30%;
+  float: right;
+  display: flex;
+  text-align: right;
+  display: inline;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding: 21px;
+  /* position: relative;
+  top: -460px */
+}
 
 .display{
 
-    padding: 30px;
-    padding-right:25px;
-    margin-right: 45px;
-    margin-right: 45px;
+  padding: 30px;
+  padding-right:25px;
+  margin-right: 45px;
+  margin-right: 45px;
 }
 
 .nav{
 
-    width: 165px;
-    height: 830px;
-    z-index: 1;
-    top: 25; 
-    left:0; 
-    float: left;
-    position: relative;
-    overflow-x: hidden;
-    
-    background-color:rgb(209, 209, 209);
-   
-    
+  width: 165px;
+  height: 830px;
+  z-index: 1;
+  top: 25; 
+  left:0; 
+  float: left;
+  position: relative;
+  overflow-x: hidden;
+  
+  background-color:rgb(209, 209, 209);
+ 
+  
 
 }
 .tab-content{
-    padding: 10px;
+  padding: 10px;
 }
 .section{
-    display: grid;
-    grid-template-areas:
-    'tabs tab-content tab-content tab-content asideBar'
-    'tabs tab-content tab-content tab-content asideBar'
-    'tabs tab-content tab-content tab-content asideBar'
+  display: grid;
+  grid-template-areas:
+  'tabs tab-content tab-content tab-content asideBar'
+  'tabs tab-content tab-content tab-content asideBar'
+  'tabs tab-content tab-content tab-content asideBar'
 
 }
 .bar{
-    border: 1px solid; 
-    padding: 10px;
-    border-color: black;
-    border-radius: 5px;
-    width: 160px;
-    height: auto;
-    background-color: rgb(209, 209, 209);
-    text-align: left;
-    font-size: 14px;
+  border: 1px solid; 
+  padding: 10px;
+  border-color: black;
+  border-radius: 5px;
+  width: 160px;
+  height: auto;
+  background-color: rgb(209, 209, 209);
+  text-align: left;
+  font-size: 14px;
 
-    
+  
 }
 
 .lineHeight{
-    line-height: 0.2px;
+  line-height: 0.2px;
 }
 .buttons{
-    padding: 15px;
-    margin-top: 10px;
-    margin-left: -15px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-left: -15px;
 }
 .blue{
-     background-color: #5A67D8; 
-     border: #5A67D8; ; 
-     border-radius: 5px;
-     width: 12em;
-     height:3em;
-     padding: 15px;
+   background-color: #5A67D8; 
+   border: #5A67D8; ; 
+   border-radius: 5px;
+   width: 12em;
+   height:3em;
+   padding: 15px;
 
 }
 .tabs a{
-    text-decoration: none;
+  text-decoration: none;
 }
 .green{
-    background-color: rgb(60, 218, 21);
-    border-radius: 5px;
-    border: rgb(60, 218, 21);
-    padding: 15px;
-    width: 12em;
-     height:3em;
+  background-color: rgb(60, 218, 21);
+  border-radius: 5px;
+  border: rgb(60, 218, 21);
+  padding: 15px;
+  width: 12em;
+   height:3em;
 }
 .mainNav a{
-    
-    color: black;
-    display: block;
-    text-decoration: none;
-    padding: 15px;
+  
+  color: black;
+  display: block;
+  text-decoration: none;
+  padding: 15px;
 }
 
 .mainNav a:hover{
-    color: rgb(26, 22, 22);
+  color: rgb(26, 22, 22);
 
 }
 
 /* Start of abe's code */
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
-    background-color: blue;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
-    background-color:lightblue
-  }
-  
-  /* Add a background color and some padding around the form */
-  .container {
-    border-radius: 5px;
-   
-    padding: 20px;
-  }
+  background-color: blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color:lightblue
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 5px;
+ 
+  padding: 20px;
+}
 
 /*Shadowboxes for Create Issue form*/
 input, textarea, select{
-    box-shadow: 1px 1px 1px 1px #888888;
-    
-  }
+  box-shadow: 1px 1px 1px 1px #888888;
+  
+}
 
 
-  /* home screen: dancye's part */
-  .issues{
-    display: flex;
-    justify-content: space-between;
-  }
+/* home screen: dancye's part */
+.issues{
+  display: flex;
+  justify-content: space-between;
+}
 .filter{
-    display:flex;
-    padding-left: 10px;
-  }
-/* body{
-    width: fit-content;
-} */
+  display:flex;
+  padding-left: 10px;
+}
+
 #h1{
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    padding-left: 15px;
-    padding-top: 10px;
-  }
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 700;
+  padding-left: 15px;
+  padding-top: 10px;
+
+
+}
 #par{
-    font-weight: bold;
-    font-family: sans-serif;
-    padding-right: 35px;
-    padding-top: 8px;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding-right: 35px;
+  padding-top: 8px;
+}
+table{
+  border-collapse: collapse; 
+  font-family:sans-serif;
+  width: 100%;
+}
+em{
+  font-weight: bold;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+tr:first-child {
+  background-color: #e2e2e2;
+  border-radius: 2.5px;
   }
-  table{
-    border-collapse: collapse; 
-    font-family:sans-serif;
-    width: 100%;
-  }
-  em{
-    font-weight: bold;
-  }
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  tr:first-child {
-    background-color: #e2e2e2;
-    border-radius: 2.5px;
-    }
-  #status2{
-    font: 1em sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    color:white;
-    background-color: orangered;
-    opacity: 0.9;
-    padding: 7px;
-    border: none;
-    border-radius: 5.5px;
-  }
-  #status1{
-    text-transform: uppercase;
-    text-align: center;
-    font: 1em sans-serif;
-    color:white;
-    background-color: green;
-    opacity: 0.7;
-    padding: 7px;
-    border: none;
-    border-radius: 5.5px;
-  }
-  #status3{
-    text-transform: uppercase;
-    text-align: center;
-    color:black;
-    font: 1em sans-serif;
-    background-color:gold;
-    padding: 9px;
-    border: none;
-    border-radius: 5.5px;
-  }
-  input[type=button]{
-    margin: auto;
-  }
-  a:link{
-    text-decoration: none;
-    color:rgb(27, 126, 226);
-  }
-  /* #all, #open, #my-tickets{
-    background-color: none;
-    color: black;
-    font: 1em sans-serif;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding:10px;
-    padding-left: 50px;
-    border-radius: 5px;
-    margin-top: 8px;
-  } */
-  .new-issue{
-    background-color: green;
-    opacity: 0.7;
-    font: 1em sans-serif;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-top: 30px;
-    height: 40px;
-    width: 165px;
-    margin-right: 45px;
-  }
-  .filter{
-    padding-bottom: 25px;
-    padding-top: 10px;
-  }
-  a.all, a.open, a.tickets{
-    background-color: none;
-    color: black;
-    font: 1em sans-serif;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding:7px;
-    padding-left: 50px;
-    border-radius: 5px;
-    margin-top: 8px;
-  }
-  a.all:link, a.all:visited {
-    background-color:none;
-    color:black;
-    padding: 15px 25px;
-    margin-right: 25px;
-    height: 10px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  a.open:link, a.open:visited {
-    background-color: none;
-    color: black;
-    padding: 15px 25px;
-    margin-right: 20px;
-    height: 10px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  a.tickets:link, a.tickets:visited {
-    background-color:none;
-    color: black;
-    padding: 15px 25px;
-    height: 10px;
-    width: 120px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
-  a.all:hover, a.all:active {
-    background-color: rgb(54, 54, 233);
-    opacity: 0.8;
-    color: white;
-    }
-  a.open:hover, a.open:active {
-    background-color: rgb(54, 54, 233);
-    opacity: 0.8;
-    color: white;
-    }
-  a.tickets:hover, a.tickets:active {
-    background-color: rgb(54, 54, 233);
-    opacity: 0.8;
-    color: white;
-    }
+#status2{
+  font: 1em sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color:white;
+  background-color: orangered;
+  opacity: 0.9;
+  padding: 7px;
+  border: none;
+  border-radius: 5.5px;
+}
+#status1{
+  text-transform: uppercase;
+  text-align: center;
+  font: 1em sans-serif;
+  color:white;
+  background-color: green;
+  opacity: 0.7;
+  padding: 7px;
+  border: none;
+  border-radius: 5.5px;
+}
+#status3{
+  text-transform: uppercase;
+  text-align: center;
+  color:black;
+  font: 1em sans-serif;
+  background-color:gold;
+  padding: 9px;
+  border: none;
+  border-radius: 5.5px;
+}
+input[type=button]{
+  margin: auto;
+}
+a:link{
+  text-decoration: none;
+  color:rgb(27, 126, 226);
+}
+/* #all, #open, #my-tickets{
+  background-color: none;
+  color: black;
+  font: 1em sans-serif;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding:10px;
+  padding-left: 50px;
+  border-radius: 5px;
+  margin-top: 8px;
+} */
+.new-issue{
+  background-color: green;
+  opacity: 0.7;
+  font: 1em sans-serif;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 30px;
+  height: 40px;
+  width: 165px;
+  margin-right: 45px;
+  font-weight: 700;
+}
+.filter{
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+.par{
+  padding-top: 6px;
+}
+.all, .open, .myticket{
+  color: #000;
+  text-transform: uppercase;
+  border: transparent;
+  background-color: transparent;
+  margin-left: 25px;
+  padding: 3px, 15px, 3px, 15px;
+  text-align: center;
+  font-weight: 700;
+}
+.all:active, .open:active, .myticket:active{
+background-color: blue;
+border-radius: 5px;
+border: transparent;
+color: white;
+}
+.all:focus, .open:focus, .myticket:focus{
+background-color: blue;
+border-radius: 5px;
+border: transparent;
+color: white;
+}
