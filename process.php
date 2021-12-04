@@ -15,10 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   date_default_timezone_set('Jamaica');
   
-  $title = $_POST['title']; 
-  $dr = $_POST['description'];
-  $ty = $_POST['type'];
-  $priority = $_POST['priority'];
+  $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
+  $dr = trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING));
+  $ty = trim(filter_var($_POST['type'], FILTER_SANITIZE_STRING)) ;
+  $priority = trim(filter_var($_POST['priority'], FILTER_SANITIZE_STRING));
   $stat = "Open"; 
   $created =  date("Y-m-d H:i:s");   
   $updated = date("Y-m-d H:i:s");
