@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $stat = "Open"; 
   $created =  date("Y-m-d H:i:s");   
   $updated = date("Y-m-d H:i:s");
-  $sql = "INSERT INTO issues (`title`, `description`, `type`,`priority`,`status`, `created`, `updated`) 
-  VALUES ('$title', '$dr', '$ty', '$priority', '$stat', '$created', '$updated')";
+  $sql = "INSERT INTO issues (`title`, `description`, `type`,`priority`,`status`, `assigned_to`,`created`, `updated`) 
+  VALUES ('$title', '$dr', '$ty', '$priority', '$stat','$name', '$created', '$updated')";
   $conn->exec($sql); 
 
   echo "New records created successfully";
