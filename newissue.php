@@ -1,15 +1,4 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-if (!isset($_POST['title']) || !isset($_POST['description']) ||
-empty($_POST['title']) || empty($_POST['description'])) {
-  echo "What?!?!? You don't have a name or ID Number?";
-} else {
-  echo "Your name is: <strong>" . $_POST['description'] . "</strong> and your ID Number is: <strong>" . $_POST['description'] . "</strong>.";
-}
-}
-
-?>
+ 
 
 <!DOCTYPE html>
 <html>
@@ -45,9 +34,11 @@ empty($_POST['title']) || empty($_POST['description'])) {
                 <textarea id="description" name="array[]" placeholder=" " style="height:200px"></textarea>
                         
                 <label for="assigned">Assigned To</label>
-                <select id="issue" name="assigned">
+                <select id="assigned" name="assigned">
 
-                    <option value="name">Marcia Brady</option>
+                    <option value="name1">Admin</option>
+                    <option value="name2">Sol</option>
+                    
                 </select><br><br>
             
                 <label for="type">Type</label>

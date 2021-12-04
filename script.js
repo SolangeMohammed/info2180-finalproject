@@ -4,6 +4,7 @@ window.onload = function(){
     let email = document.getElementById("email")
     let submit = document.getElementById("submit")
     let password =document.getElementById("password")
+    let results =document.getElementById("results")
     var pwvalidate = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"
     let formelements = document.getElementById("new-user").elements
     const postRequest= new XMLHttpRequest();
@@ -40,12 +41,12 @@ window.onload = function(){
         }
         */
        var insertrequest = new XMLHttpRequest();
-       var url = "http://localhost/info2180-finalproject/addnewuser.php?fisrtname="  +fname.value+ "&lastname=" +lname.value+ "&email=" +email.value+ "&password=" +password.value;
+       var url = "addnewuser.php";
        insertrequest.onreadystatechange = function(){
            if(insertrequest.readyState == XMLHttpRequest.DONE){
             if(insertrequest.status == 200){
                 var result = insertrequest.responseText
-                console.log(result)
+                 results.innerHTML=result
             }
             else{
                 alert("Cant add user")
@@ -53,7 +54,8 @@ window.onload = function(){
                
            }
        }
-       insertrequest.open("GET",url,true);
-       insertrequest.send();
+       insertrequest.open("POST",url);
+       insertrequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+       insertrequest.send('firstname=' + encodeURIComponent(fname.value) + "&lastname=" + encodeURIComponent(lname.value) + "&email=" + encodeURIComponent(email.value) + "&password=" + encodeURIComponent(password.value));
     });
 }

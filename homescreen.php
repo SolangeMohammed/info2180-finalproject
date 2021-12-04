@@ -1,3 +1,15 @@
+<?php
+$host = 'localhost';
+$username = 'admin@project2.com';
+$password = 'password123';
+$dbname = 'bugme';
+
+$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+$stmt = $conn->query("SELECT * FROM issues");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+                                
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,13 +36,20 @@
                     <form action="">
                         <div class="issues">
                           <h1 class="h1">Issues</h1>
-                          <button class="new-issue" id="new_issue">Create New User</button>
+                          <button class="new-issue" id="new_issue">Create New Issue</button>
+                          <!-- <script type="text/javascript">
+
+                                document.getElementById("new_issue").onclick = function () {
+                                    console.log('button clicked');
+                                    location.href = "newissue.php";
+                                };
+                            </script> -->
                         </div>
                         <div class="filter">
                           <p class="par">Filter by: </p>
-                          <a class="all" href="" id="all">All</a>
-                          <a class="open" href="" id="open">Open</a>
-                          <a class="tickets" href="" id="my-tickets">My Tickets</a>
+                          <a class="all" href="" id="all_id">All</a>
+                          <a class="open" href="" id="open_id">Open</a>
+                          <a class="tickets" href="" id="my-tickets_id">My Tickets</a>
                         </div>
                         <table class="table">
                            <thead>
@@ -44,44 +63,24 @@
                             </thead>
                             <tbody id="table-body">
                                 <tr>
-                                <?php
-                                $host = 'localhost';
-                                $username = 'admin@project2.com';
-                                $password = 'password123';
-                                $dbname = 'bugme';
-                                
-                                $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-                                $stmt = $conn->query("SELECT * FROM issues");
-                                $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                foreach($results as $row):                                    
+                                    <?php foreach($results as $row):
                                     {
-                                        $assigned = $row['assigned_to'];
-                                        $stmt1= $conn->query("SELECT DISTINCT users.id, users.firstname, users.lastname FROM users WHERE users.id=$assigned");
-                                        $results1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
-                                        $assignedName = $results1['firstname'] . $results1['lastname'];
-                                        echo "<table>";
-                                        foreach($results as $row):{
-                                            echo "<tr>"; 
-                                            echo "<td>" .$row['id']. "</td>";
-                                            echo "<td>" .$row['title']. "</td>";
-                                            echo"<td>" .$row['type']. "</td>";
-                                            echo "<td>" .$row['status']. "</td>";
-                                            echo "<td>" . $assignedName . "</td>";
-                                            echo "<td>" .$row['created']. "</td>";
-                                            echo "</tr>";  
-
-                                            echo "</table>"; 
-
-                                      
+                                        
+                                        echo "<tr>"; 
+                                        echo "<td href='#'>" .$row['title']. "</td>";
+                                        echo "<td>" .$row['type']. "</td>";
+                                        echo "<td>" .$row['status']. "</td>";
+                                        echo "<td>" .$row['assigned_to']. "</td>";
+                                        echo "<td>" .$row['created']. "</td>";
+                                        echo "</tr>";
+                                        
                                         }
-                                         endforeach;  
-                                    }  
-                                endforeach;  
-                                ?>
-
+                                    endforeach;  
+                                    ?>
+                                </tr>
                             </tbody>
-                          
                         </table>
+
                     </form>
                 </div> 
     </body>

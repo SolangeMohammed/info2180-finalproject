@@ -3,6 +3,7 @@ window.onload = function()
 {
     var submit = document.querySelector('#issue_submit');
     var httpRequest; 
+    var assigned = document.querySelector('[id="assigned"]');
     var priority = document.querySelector('[id="priority"]');
     let desc; 
     var type = document.querySelector('[id="type"]'); 
@@ -24,6 +25,18 @@ window.onload = function()
 
     });
 
+    let nameText
+    assigned.addEventListener("change", function (e){
+        // log(`e.target`, e.target);
+        var nam= e.target;
+        var val = nam.value;
+        nameText = nam.selectedOptions[0].text;
+        
+        console.log('option text', nameText);
+
+    });
+    
+
     submit.addEventListener('click', function(element)
     {
         element.preventDefault();
@@ -41,7 +54,7 @@ window.onload = function()
         httpRequest.onreadystatechange = processName;
         httpRequest.open('POST', url);
         httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        httpRequest.send('title=' + encodeURIComponent(t) + '&description=' + encodeURIComponent(d) + '&type=' + encodeURIComponent(desc) + "&priority=" + encodeURIComponent(pri));
+        httpRequest.send('title=' + encodeURIComponent(t) + '&description=' + encodeURIComponent(d) + '&type=' + encodeURIComponent(desc) + "&priority=" + encodeURIComponent(pri)+ "&assigned=" + encodeURIComponent(nameText));
     });
     
     function processName() {

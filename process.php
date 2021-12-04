@@ -14,7 +14,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   date_default_timezone_set('Jamaica');
-  
+  $name = trim(filter_var($_POST['assigned'], FILTER_SANITIZE_STRING));
   $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
   $dr = trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING));
   $ty = trim(filter_var($_POST['type'], FILTER_SANITIZE_STRING)) ;
@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo "The title: <strong>" . $_POST['title'] . "</strong> Description: <strong>" . $_POST['description'] . "</strong>.";
   echo "type:" .$_POST['type'] . "priority: <strong>" .$_POST['priority'] . "</strong>."  ; 
   echo $status; 
-  echo $created; 
+  echo $created;
+  echo $name;  
   
   
   }else{

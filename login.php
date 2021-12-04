@@ -1,90 +1,57 @@
-<?php 
+<?php
+session_start();
+?>
 
-session_start(); 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>INFO2180 Final Project</title>
+ <link rel="stylesheet" href="styles.css">
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div>
+           <i id="bug" class="fa fa-bug" style="font-size:36px;"></i>
+           <h1 class="center">Bugme Issue Tracker</h1>
+           <p></p>
+   
+        </div>
+       
+    </header>
 
-require_once "php/configdatabase.php";
+        <form action="loginval.php" method="post">
+            <h1>LOGIN</h1>
+            <div class="form-group">
+                <label for="">Email Address</label>
+                <input type="text" class= "form" name="email" value="" placeholder="Please enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class= "form" name="password" value="" placeholder="Please enter your password" required>
+            </div>
+            <input type="submit" class="formbtn" value="Login">
 
+        </form>
+        <?php
 
-
-
-
-if (isset($_POST['username']) && isset($_POST['password'])) {
-
-    function validate($data){
-
-       $data = trim($data);
-
-       $data = stripslashes($data);
-
-       $data = htmlspecialchars($data);
-
-       return $data;
-
-    }
-
-    $username = validate($_POST['username']);
-
-    $password = validate($_POST['password']);
-
-    if (empty($username)) {
-
-        header("Location: index.php?error=username is required");
-
-        exit();
-
-    }else if(empty($password)){
-
-        header("Location: index.php?error=Password is required");
-
-        exit();
-
-    }else{
-
-        $sql = "SELECT * FROM users WHERE username ='$username' AND password='$password'";
-        $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $result = mysqli_query($conn, $sql);
-
-        if (mysqli_num_rows($result) === 1) {
-
-            $row = mysqli_fetch_assoc($result);
-
-            if ($row['username'] === $username && $row['password'] === $password) {
-
-                echo "Logged in!";
-
-                $_SESSION['username'] = $row['username'];
-
-                // $_SESSION['name'] = $row['name'];
-
-                $_SESSION['id'] = $row['id'];
-
-                header("Location: home.php");
-
-                exit();
-
-            }else{
-
-                header("Location: index.php?error=Incorect username or password");
-
-                exit();
-
+            if(isset($_SESSION['message'])){
+                $message = $_SESSION['message'];
+                unset($_SESSION['message']);
             }
+            else{
+                $message = "";
+            }
+            echo $alert = !empty($message) ? $message : "";
 
-        }else{
+            ?>
 
-            header("Location: index.php?error=Incorect username or password");
+  
 
-            exit();
-
-        }
-
-    }
-
-}else{
-
-    header("Location: index.php");
-
-    exit();
-
-}
+ </body>
+ </html>
