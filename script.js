@@ -184,7 +184,7 @@ window.onload = function(){
                         
                     }
                 }
-                httpRequest.open("GET", "http://localhost/info2180-finalproject/jobdetails.php?iden="+linkId[i].value); 
+                httpRequest.open("GET", "http://localhost/info2180-finalproject/jobdetails.php?iden="+linkId[i].value,true); 
                 httpRequest.send(); 
             }
         )}; 
