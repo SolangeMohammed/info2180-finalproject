@@ -1,5 +1,4 @@
 <?php
-
 require_once "./phpfunctions.php";
 session_start();
 if(isset($_SESSION['id'])) {
@@ -8,6 +7,6 @@ if(isset($_SESSION['id'])) {
         session_start();
     }
 
-redirect("./loginpage.php");
+redirect("./login.php");
 
  ?>

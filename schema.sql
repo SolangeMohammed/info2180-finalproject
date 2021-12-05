@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 04, 2021 at 12:04 AM
+-- Generation Time: Dec 05, 2021 at 05:23 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -45,8 +45,8 @@ CREATE TABLE `issues` (
 --
 
 INSERT INTO `issues` (`id`, `title`, `description`, `type`, `priority`, `status`, `assigned_to`, `created_by`, `created`, `updated`) VALUES
-(1, 'Bug', 'Location Service isnt Working ', 'Proposal', 'Minor', 'Closed', 'Marsha Brady', '', '2015-01-21 16:13:00', '2015-02-14 15:09:00'),
-(2, 'Vunerability Issue', 'Weak Security ', 'Bug', 'Major', 'Open', 'Admin', '', '2015-01-20 16:13:00', '2015-02-25 15:09:00');
+(2, 'Trojan Horse', 'Files corrupted', 'Bug', 'Major', 'Open', 'Admin', '', '2021-12-04 05:57:59', '2021-12-04 05:57:59'),
+(17, 'Malicious Intent', 'Too many viruses', 'Bug', 'Major', 'Open', 'Admin Doe', 'Jane Doe', '2021-12-05 04:03:26', '2021-12-05 04:03:26');
 
 -- --------------------------------------------------------
 
@@ -56,21 +56,22 @@ INSERT INTO `issues` (`id`, `title`, `description`, `type`, `priority`, `status`
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `firstname` varchar(32) NOT NULL,
-  `lastname` varchar(32) NOT NULL,
-  `pass_word` varchar(32) NOT NULL,
-  `email` varchar(64) NOT NULL,
-  `date_joined` datetime NOT NULL
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `date_joined` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `pass_word`, `email`, `date_joined`) VALUES
-(1, 'admin', '', 'A0F874BC7F54EE086FCE60A37CE7887D', 'admin@project2.com', '2016-11-21 16:13:00'),
-(2, 'Sol', 'Doe', '3CC1A2870D81D824976755EE1FB87F1E', 'soly@edu.com', '2015-01-21 16:13:00'),
-(3, 'Kali', 'Spellman', 'A80D1D7BA44460137B1A95072891722D', 'kal@gmail.com', '2016-01-21 16:13:00');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `password`, `email`, `date_joined`) VALUES
+(1, 'Admin', 'Doe', '482c811da5d5b4bc6d497ffa98491e38', 'admin@project2.com', NULL),
+(2, 'Jane', 'Doe', '482c811da5d5b4bc6d497ffa98491e38', 'jane@gmail.com', '0000-00-00 00:00:00'),
+(5, 'John', 'Fredrick', '$2y$10$wF828rEAu3fXfqLy6PMEguRQNXleTuBvDcVmaZjFBirtNS0WBmlu2', 'johnny@gmail.com', '2021-12-04 11:47:44'),
+(7, 'Tracker', 'John', '1c34d9694cfb7c8477f83f2ebe0d4ab4', 'tracker@john.com', '2021-12-05 04:21:27');
 
 --
 -- Indexes for dumped tables
@@ -86,7 +87,8 @@ ALTER TABLE `issues`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -96,13 +98,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `issues`
 --
 ALTER TABLE `issues`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

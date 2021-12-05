@@ -1,3 +1,16 @@
+<?php
+session_start();
+$iden = filter_input(INPUT_GET,'inden',FILTER_SANITIZE_STRING)); 
+require "./configdatabase.php";
+
+$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$stmt = $conn->query("SELECT * FROM issues WHERE id='$iden'");
+$results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +20,7 @@
         <link rel="stylesheet" href="styles.css" media="screen" />
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src=""></script>
+        <script src="homescreen.js"></script>
     </head>
     <body>
         <header class="header">
@@ -22,18 +35,14 @@
         <div class="main">
 
             <div class="display">
-                <h1>XSS VULERABILITY IN ADD USER FORM</h1>
-                <h3>Issue #100</h3>  
+            <h1> <? $results['title'] ?></h1>
+                <h3><? "Issue #", $results['id'] ?></h3>  
             </div>
             <div class="issue">
             <div class="article">
                 <article class="mainArticle">
 
-                    The occurrence of groundwater within the Earth’s crust and the emergence of springs at the ground 
-                    surface are determined by the lithology of geological materials, regional geological structure, 
-                    geomorphology of landforms and the availability of recharge sources. The infiltration of rainfall to the 
-                    water table and the flow of groundwater in an aquifer towards a discharge area are governed by 
-                    physical laws that describe changes in energy of the groundwater. In this chapter, the physical properties 
+                <? $results['description'] ?><
                                                 
                     <p>> </p>
                     <p>></p>
@@ -48,13 +57,13 @@
                 <aside class="sidebar">
                     <div class ="bar">
                         <h3>Assigned to:</h3>
-                        <p class="lineHeight">Tom Brady</p>
+                        <p class="lineHeight"><? $results['assigned_to'] ?></p>
                         <h3>Type:</h3>
-                        <p class="lineHeight">Proposal</p>
+                        <p class="lineHeight"><? $results['type'] ?></p>
                         <h3>Priority:</h3>
-                        <p class="lineHeight">Major</p>
+                        <p class="lineHeight"><? $results['priority'] ?></p>
                         <h3>Status: </h3>
-                        <p class="lineHeight">Open</p>
+                        <p class="lineHeight"><? $results['status'] ?></p>
                                             
                     </div>
                     <div class="buttons">

@@ -11,11 +11,10 @@ $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $stmt = $conn->query("SELECT * FROM issues");
 
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?> 
-<?php
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  date_default_timezone_set('Jamaica');
+  date_default_timezone_set('UTC');
   $assigned_to = trim(filter_var($_POST['assigned'], FILTER_SANITIZE_STRING));
   $title = trim(filter_var($_POST['title'], FILTER_SANITIZE_STRING));
   $dr = trim(filter_var($_POST['description'], FILTER_SANITIZE_STRING));
@@ -23,14 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $priority = trim(filter_var($_POST['priority'], FILTER_SANITIZE_STRING));
   $stat = "Open"; 
   
-
-  // $fullname = explode(" ",$assigned_name);
-  // $fname = $fullname[0];
-  // $lname = $fullname[1]; 
-  // $stmt1 = $conn->query("SELECT id FROM users WHERE firstname='$fname' AND lastname='$lname'");
-  // $stmt1->execute();
-  
-
+  //  $assigned =
   $created_by = $_SESSION['id']; 
   $stmt1 = $conn->query("SELECT firstname, lastname FROM users WHERE id= '$created_by'");
   $result = $stmt1->fetch(PDO::FETCH_ASSOC); 
@@ -48,11 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   echo "New records created successfully";
   echo $createdby_nl;
-  echo "The title: <strong>" . $_POST['title'] . "</strong> Description: <strong>" . $_POST['description'] . "</strong>.";
-  echo "type:" .$_POST['type'] . "priority: <strong>" .$_POST['priority'] . "</strong>."  ; 
-  echo $created;
-  echo $created_by; 
-  echo $assigned_to;  
+   
   
   
   }else{

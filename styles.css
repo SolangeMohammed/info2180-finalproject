@@ -1,11 +1,12 @@
 body{
   font-size: 18px;
   color: #2D3748;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,'Helvetica Neue', Arial, "Noto Sans", sans-serif;
+  font-family:Georgia, 'Times New Roman', Times, serif; 
   box-sizing: border-box;
-  margin:0 auto;
-  max-width: 960px;
-  width: 960px;
+  margin:0;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
  
 
 }
@@ -31,7 +32,7 @@ header{
   color: white;
   padding: 15px; 
   line-height: 2px;
-  width: 100%;
+  width: 110%;
 }
 
 .issue{
@@ -48,15 +49,61 @@ main{
   grid-row-gap: 10px;
 }
 
-.article{
+.article{ 
  justify-content: center;
  padding-left:25px; 
 }
+.tab-content .h1{
+color: #000;
+font-size: 30px;
+font-weight: 700;
+}
+
 
 input{
   width: 500px;
   margin-bottom: -10px;
   padding-bottom: 10px;
+}
+input[type=text]{
+width: 90%;
+padding: 12px 20px;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+margin-bottom: 25px;
+background-color: #f5f4f4;
+}
+#issue_submit{
+background-color: rgb(4, 4, 214);
+color: white;
+font-weight: 900;
+opacity: 5;
+width: 20%;
+border-radius: 5px;
+padding: 5px 10px;
+}
+.description{
+width: 60%;
+height: 40%; 
+margin-bottom: 25px;
+background-color:#f5f4f4;
+}
+select {
+width: 40%;
+padding: 12px 20px;
+margin: 50px 20px;
+border: none;
+border-radius: 4px;
+margin-bottom: 25px;
+background-color:#f5f4f4;
+
+}
+label{
+padding: 12px 12px 12px 0;
+font-size: medium;
+display: inline-block;
 }
 form{
   display:flex;
@@ -64,11 +111,25 @@ form{
   flex-direction: column;
   flex-wrap: wrap;
   padding: 10px;
+  margin-left: 25px;
+}
+#new h3{
+color:black;
+font-weight: 700;
+margin-left: 25px;
+font-size: 30px;
+}
+#add h3{
+color:black;
+font-weight: 700;
+margin-left: 35px;
+font-size: 30px;
 }
 
 .submit{
   width: 80px;
   background-color: blue;
+  font-weight: 700;
   color: white;
   padding: 8px;
   margin-top: 10px;
@@ -102,8 +163,8 @@ form{
 
 .nav{
 
-  width: 165px;
-  height: 830px;
+  width: 255px;
+  height: 1000px;
   z-index: 1;
   top: 25; 
   left:0; 
@@ -111,9 +172,7 @@ form{
   position: relative;
   overflow-x: hidden;
   
-  background-color:rgb(209, 209, 209);
- 
-  
+  background-color:rgb(209, 209, 209); 
 
 }
 .tab-content{
@@ -134,7 +193,8 @@ form{
   border-radius: 5px;
   width: 160px;
   height: auto;
-  background-color: rgb(209, 209, 209);
+  background-color:  #f1f1f1;
+  /* background-color: rgb(209, 209, 209); */
   text-align: left;
   font-size: 14px;
 
@@ -169,12 +229,15 @@ form{
   width: 12em;
    height:3em;
 }
+
 .mainNav a{
-  
+  bottom: 0;
   color: black;
   display: block;
   text-decoration: none;
   padding: 15px;
+  font-size: 20px;
+  font-weight: 900;
 }
 
 .mainNav a:hover{
@@ -288,22 +351,20 @@ tr:first-child {
 input[type=button]{
   margin: auto;
 }
-a:link{
-  text-decoration: none;
-  color:rgb(27, 126, 226);
-}
-/* #all, #open, #my-tickets{
-  background-color: none;
-  color: black;
-  font: 1em sans-serif;
-  font-family: sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding:10px;
-  padding-left: 50px;
+.new-issue{
+  background-color: green;
+  opacity: 0.7;
+  font-size: 17px;
+  font:sans-serif;
+  font-weight: 500;
+  color: white;
+  border: none;
   border-radius: 5px;
-  margin-top: 8px;
-} */
+  margin-top: 30px;
+  height: 55px;
+  width: 185px;
+  margin-right: 45px;
+}
 .new-issue{
   background-color: green;
   opacity: 0.7;
