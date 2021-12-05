@@ -75,7 +75,7 @@ require_once "./phpfunctions.php";?>
                                             <tr>
 
                                                 <input id ="issueID"type="hidden" value="<?=$row['id']?>"/>
-                                                <td><b>#<?= $row['id']." "?></b><a id="click" style="cursor:pointer"><?=$row['title']?></b></td>
+                                                <td><b>#<?= $row['id']." "?></b><a class="click" style="cursor:pointer"><?=$row['title']?></b></td>
                                                 <td><?= $row['type'] ?></td>
                                                 <td><button> <?= $row['status']?></button> </td>
                                                 <td><?= $row['assigned_to'] ?></td>

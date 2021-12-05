@@ -160,18 +160,19 @@ window.onload = function(){
     }
 
     var link = document.getElementById('click'); 
-    var linkId = document.getElementById('issueID'); 
-    console.log(link.innerHTML); 
-    
-     
-    
-        var httpRequest = new XMLHttpRequest(); 
+    var linkId = document.getElementsByClassName("issueID"); 
+    var httpRequest = new XMLHttpRequest(); 
+
+    if(link)
+    {
         for(var i = 0; i < link.length; i++){
-            //console.log(linkId.value); 
             link[i].addEventListener("click", function(element)
             {
                 element.preventDefault(); 
-                console.log("issue clicked"); 
+                console.log("clicked"); 
+                console.log(link[i]); 
+                console.log(link[i].test);
+                console.log(link[i].innerHTML);
                 httpRequest.onreadystatechange= function()
                 {
                     if(httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200){
@@ -184,11 +185,13 @@ window.onload = function(){
                     }
                 }
                 httpRequest.open("GET", "http://localhost/info2180-finalproject/jobdetails.php?iden="+linkId[i].value); 
-                httpRequest.send();  
+                httpRequest.send(); 
+            }
+        )}; 
+    }
 
 
 
-            })
-        }
     
+
 }
